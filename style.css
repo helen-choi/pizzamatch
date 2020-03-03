@@ -1,0 +1,12 @@
+body {
+  background-color: #06424f;
+}
+header {
+  text-align: center;
+  width: 100%;
+}
+header h1 {
+  color:white;
+  font-family: 'Leckerli One', cursive;
+  font-size: 50px;
+}
