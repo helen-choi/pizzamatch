@@ -6,20 +6,96 @@
   <link rel="stylesheet" href="grid.css">
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css?family=Leckerli+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
   <title>Memory Game</title>
 </head>
 <body>
   <div class="container">
-    <header>
-      <h1>Memory Match</h1>
-    </header>
-    <main>
-      <div class="game-container">
-        <div class="row">
-          div.column*
+    <div class="row">
+      <header>
+        <h1>Memory Match</h1>
+      </header>
+    </div>
+    <div class="row">
+      <main>
+        <div class="boxes">
+          <div class="column col-2">
+            <div class="box"></div>
+          </div>
+          <div class="column col-2">
+            <div class="box"></div>
+          </div>
+          <div class="column col-2">
+            <div class="box"></div>
+          </div>
+          <div class="column col-2">
+            <div class="box"></div>
+          </div>
+          <div class="column col-2">
+            <div class="box"></div>
+          </div>
+          <div class="column col-2">
+            <div class="box"></div>
+          </div>
+          <div class="column col-2">
+            <div class="box"></div>
+          </div>
+          <div class="column col-2">
+            <div class="box"></div>
+          </div>
+          <div class="column col-2">
+            <div class="box"></div>
+          </div>
+          <div class="column col-2">
+            <div class="box"></div>
+          </div>
+          <div class="column col-2">
+            <div class="box"></div>
+          </div>
+          <div class="column col-2">
+            <div class="box"></div>
+          </div>
+          <div class="column col-2">
+            <div class="box"></div>
+          </div>
+          <div class="column col-2">
+            <div class="box"></div>
+          </div>
+          <div class="column col-2">
+            <div class="box"></div>
+          </div>
+          <div class="column col-2">
+            <div class="box"></div>
+          </div>
+          <div class="column col-2">
+            <div class="box"></div>
+          </div>
+          <div class="column col-2">
+            <div class="box"></div>
+          </div>
         </div>
-      </div>
-    </main>
+        <div class="score">
+          <div class="meter">
+            <span id="accuracyBar"></span>
+          </div>
+          <p>Accuracy</p>
+          <div class="number-box">
+            <div class="stats col-4">
+             <p id="stats" class="numbers">0</p>
+              <p>Stats</p>
+            </div>
+            <div class="games-played col-4">
+              <p id="gamesPlayed" class="numbers">0</p>
+              <p>Games Played</p>
+            </div>
+            <div class="attempts col-4">
+              <p id="attempts" class="numbers">0</p>
+              <p>Attempts</p>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
   </div>
   <script src="main.js"></script>
 </body>
