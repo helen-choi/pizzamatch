@@ -1,8 +1,10 @@
 var gameCards = document.getElementById('gameCards');
-var firstCardClicked;
-var secondCardClicked;
+var firstCardClicked = null;
+var secondCardClicked = null;
 var firstCardClasses;
 var secondCardClasses;
+var matches = 0;
+var maxMatches = 9;
 
 gameCards.addEventListener('click', handleClick);
 
@@ -22,19 +24,17 @@ function handleClick(event) {
     gameCards.removeEventListener('click', handleClick);
 
     if(firstCardClasses === secondCardClasses) {
-      console.log("images match");
       gameCards.addEventListener('click', handleClick);
-      firstCardClicked.value = null;
-      secondCardClicked.value = null;
+      firstCardClicked = null;
+      secondCardClicked = null;
     }else {
-      console.log("images do not match");
       setTimeout(function(){
         firstCardClicked.classList.remove("hidden");
         secondCardClicked.classList.remove("hidden");
+        firstCardClicked = null;
+        secondCardClicked = null;
+        gameCards.addEventListener('click', handleClick);
       },1500);
-      gameCards.addEventListener('click', handleClick);
-      firstCardClicked.value = null;
-      secondCardClicked.value = null;
     }
   }
 }
