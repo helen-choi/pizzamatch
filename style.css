@@ -15,8 +15,8 @@ header h1 {
   font-family: 'Leckerli One', cursive;
   font-size: 50px;
 }
-/* BOXES */
-main .boxes {
+/* CARDS */
+main .cards {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -24,7 +24,7 @@ main .boxes {
   margin: 0 auto;
   width: 80%;
 }
-main .boxes .column {
+main .cards .column {
   flex-basis: 16%;
   box-sizing: border-box;
   margin-bottom: 20px;
@@ -32,15 +32,59 @@ main .boxes .column {
   justify-content: center;
   align-items: center;
 }
-main .boxes .column .box {
+main .cards .column .card {
   background-color:white;
   height: 160px;
   width: 160px;
   border-radius: 10px;
-  background-image: url('assets/images/lfz-card.jpg');
+  /* background-image: url(./assets/images/lfz-card.jpg); */
   background-size:cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
 }
-/* ACCURACY BAR */
+
+/* FLIP CARDS */
+.card-front, .card-back {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  border-radius: 10px;
+}
+.card-back {
+  background-image: url(./assets/images/lfz-card.jpg);
+}
+.js-logo {
+  background-image: url(./assets/images/js-logo.png);
+}
+.css-logo {
+  background-image: url(./assets/images/css-logo.png);
+}
+.docker-logo {
+  background-image: url(./assets/images/docker-logo.jpg);
+}
+.gitHub-logo {
+  background-image: url(./assets/images/gitHub-logo.png);
+}
+.html-logo {
+  background-image: url(./assets/images/html-logo.png);
+}
+.mysql-logo {
+  background-image: url(./assets/images/mysql-logo.jpg);
+}
+.node-logo {
+  background-image: url(./assets/images/node-logo.png);
+}
+.php-logo {
+  background-image: url(./assets/images/php-logo.jpeg);
+}
+.react-logo {
+  background-image: url(./assets/images/react-logo.png);
+}
+/* SCORE */
 .score {
   width: 60%;
   text-align: center;
@@ -112,21 +156,27 @@ main .boxes .column .box {
   border-bottom-left-radius: 20px;
   overflow: hidden;
 } */
+
+.hidden {
+  display: none;
+}
+
+/* MEDIA QUERIES */
 @media only screen and (max-width: 1300px) {
-  main .boxes {
+  main .cards {
     width: 100%;
   }
 }
 @media only screen and (max-width: 1060px) {
-  main .boxes .column {
+  main .cards .column {
     flex-basis: calc(100%/3);
   }
-  main .boxes {
+  main .cards {
     width: 80%;
   }
 }
 @media only screen and (max-width: 700px) {
-  main .boxes .column .box {
+  main .cards .column .card {
     width: 120px;
     height: 120px;
   }
