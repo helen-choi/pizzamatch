@@ -27,6 +27,11 @@ function handleClick(event) {
       gameCards.addEventListener('click', handleClick);
       firstCardClicked = null;
       secondCardClicked = null;
+      matches++;
+      if(matches === maxMatches) {
+        var modal = document.querySelector(".modal-overlay");
+        modal.classList.remove("hidden");
+      }
     }else {
       setTimeout(function(){
         firstCardClicked.classList.remove("hidden");
