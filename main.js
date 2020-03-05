@@ -11,10 +11,13 @@ var resetButton = document.getElementById("reset");
 var modal = document.querySelector(".modal-overlay");
 var accuracyVar = document.getElementById("accuracy");
 accuracyVar.textContent = "0%";
+var cards = ['js-logo', 'css-logo', 'docker-logo', 'gitHub-logo', 'html-logo', 'mysql-logo', 'node-logo', 'php-logo', 'react-logo', 'js-logo', 'css-logo', 'docker-logo', 'gitHub-logo', 'html-logo', 'mysql-logo', 'node-logo', 'php-logo', 'react-logo'];
+var cardsToShuffle = document.querySelectorAll(".card-front")
 
 gameCards.addEventListener('click', handleClick);
 
 function handleClick(event) {
+  shuffleCards();
   if(event.target.className.indexOf("card-back") === -1) {
     return;
   }
@@ -82,3 +85,17 @@ function resetCards() {
   }
 }
 resetButton.addEventListener("click", resetGame);
+
+
+function shuffleCards() {
+  for(var i = 0; i < cards.length; i++) {
+    var random = Math.floor(Math.random()* cards.length);
+    var placeHolder = cards[i];
+    cards[i] = cards[random];
+    cards[random] = placeHolder;
+  }
+  for(var j = 0; i < cardsToShuffle.length; i++) {
+    cardsToShuffle[j].className = array[i];
+    cardsToShuffle.className += "card-front";
+  }
+}
