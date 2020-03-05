@@ -9,10 +9,31 @@ var attempts = 0;
 var gamesPlayed = 0;
 var resetButton = document.getElementById("reset");
 var modal = document.querySelector(".modal-overlay");
-var accuracyVar = document.getElementById("accuracy");
-accuracyVar.textContent = "0%";
 var newCards = ['js-logo', 'css-logo', 'docker-logo', 'gitHub-logo', 'html-logo', 'mysql-logo', 'node-logo', 'php-logo', 'react-logo', 'js-logo', 'css-logo', 'docker-logo', 'gitHub-logo', 'html-logo', 'mysql-logo', 'node-logo', 'php-logo', 'react-logo'];
-var oldCards = document.querySelectorAll(".card-front")
+var accuracyBar = document.querySelector(".score .meter > span");
+accuracyBar.textContent = "0%";
+
+var cards = document.createElement("div");
+cards.className = "cards";
+gameCards.appendChild(cards);
+
+for(var i =1; i <= 18; i++) {
+  var column = document.createElement("div");
+  column.classList.add("column", "col-2");
+  cards.appendChild(column);
+
+  var card = document.createElement("div");
+  card.className = "card";
+  column.appendChild(card);
+
+  var cardFront = document.createElement("div");
+  cardFront.className = "card-front";
+  card.appendChild(cardFront);
+
+  var cardBack = document.createElement("div");
+  cardBack.className = "card-back";
+  card.appendChild(cardBack);
+}
 
 window.addEventListener('load', shuffleCards);
 gameCards.addEventListener('click', handleClick);
@@ -61,14 +82,15 @@ function displayStats() {
   var attemptsVar = document.getElementById("attempts");
   attemptsVar.textContent = attempts;
 
-  var accuracyVar = document.getElementById("accuracy");
-  accuracyVar.textContent = calculateAccuracy(attempts, matches);
+  accuracyBar.textContent = calculateAccuracy(attempts, matches);
+  accuracyBar.style.width = calculateAccuracy(attempts, matches);
 }
 function calculateAccuracy(attempts, matches) {
   if(!attempts) {
     return "0%";
   }
-  return Math.trunc((matches / attempts) * 100) + "%";
+  var accuracyPercentage = Math.trunc((matches / attempts) * 100) + "%";
+  return accuracyPercentage;
 }
 function resetGame() {
   attempts = 0;
@@ -95,10 +117,10 @@ function shuffleCards() {
     newCards[i] = newCards[random];
     newCards[random] = placeHolder;
   }
-
+  var oldCards = document.querySelectorAll(".card-front");
   for (var j = 0; j < oldCards.length; j++) {
     oldCards[j].className = newCards[j];
-    oldCards[j].className += " card-front";
+    oldCards[j].classList.add("card-front");
   }
   return oldCards;
 }
