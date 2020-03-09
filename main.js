@@ -9,31 +9,66 @@ var attempts = 0;
 var gamesPlayed = 0;
 var resetButton = document.getElementById("reset");
 var modal = document.querySelector(".modal-overlay");
-var newCards = ['js-logo', 'css-logo', 'docker-logo', 'gitHub-logo', 'html-logo', 'mysql-logo', 'node-logo', 'php-logo', 'react-logo', 'js-logo', 'css-logo', 'docker-logo', 'gitHub-logo', 'html-logo', 'mysql-logo', 'node-logo', 'php-logo', 'react-logo'];
+var newCards = [
+  'garlic',
+  'mushroom',
+  'cheese',
+  'bacon',
+  'spinach',
+  'olive',
+  'tomato',
+  'onion',
+  'peppers',
+  'garlic',
+  'mushroom',
+  'cheese',
+  'bacon',
+  'spinach',
+  'olive',
+  'tomato',
+  'onion',
+  'peppers'
+];
+var toppingClasses = [
+  'topping-garlic',
+  'topping-mushroom',
+  'topping-cheese',
+  'topping-bacon',
+  'topping-spinach',
+  'topping-olive',
+  'topping-tomato',
+  'topping-onion',
+  'topping-peppers'
+]
 var accuracyBar = document.querySelector(".score .meter > span");
 accuracyBar.textContent = "0%";
+var pizza = document.querySelector(".build-pizza");
+var cards = document.querySelector('.cards');
 
-var cards = document.createElement("div");
-cards.className = "cards";
-gameCards.appendChild(cards);
+createCards();
 
-for(var i =1; i <= 18; i++) {
-  var column = document.createElement("div");
-  column.classList.add("column", "col-2");
-  cards.appendChild(column);
+// var cards = document.createElement("div");
+// cards.className = "cards";
+// gameCards.appendChild(cards);
 
-  var card = document.createElement("div");
-  card.className = "card";
-  column.appendChild(card);
+// for(var i =1; i <= 18; i++) {
+//   var column = document.createElement("div");
+//   column.classList.add("column",
+//   "col-2");
+//   cards.appendChild(column);
 
-  var cardFront = document.createElement("div");
-  cardFront.className = "card-front";
-  card.appendChild(cardFront);
+//   var card = document.createElement("div");
+//   card.className = "card";
+//   column.appendChild(card);
 
-  var cardBack = document.createElement("div");
-  cardBack.className = "card-back";
-  card.appendChild(cardBack);
-}
+//   var cardFront = document.createElement("div");
+//   cardFront.className = "card-front";
+//   card.appendChild(cardFront);
+
+//   var cardBack = document.createElement("div");
+//   cardBack.className = "card-back";
+//   card.appendChild(cardBack);
+// }
 
 window.addEventListener('load', shuffleCards);
 gameCards.addEventListener('click', handleClick);
@@ -42,11 +77,12 @@ function handleClick(event) {
   if(event.target.className.indexOf("card-back") === -1) {
     return;
   }
-  event.target.classList.add("hidden");
+  event.target.parentElement.classList.add("card-flipped");
 
   if(!firstCardClicked) {
     firstCardClicked = event.target;
     firstCardClasses = firstCardClicked.previousElementSibling.className;
+
   }else {
     secondCardClicked = event.target;
     secondCardClasses = secondCardClicked.previousElementSibling.className;
@@ -55,21 +91,70 @@ function handleClick(event) {
 
     if(firstCardClasses === secondCardClasses) {
       gameCards.addEventListener('click', handleClick);
+
+      firstCardClicked.previousElementSibling.style.opacity = "0.7";
+      secondCardClicked.previousElementSibling.style.opacity = "0.7";
+
+      pizza.classList.add("pizza-shake");
+
+      var topping = secondCardClasses.substr(11);
+      setTimeout(function(){
+        switch (topping) {
+          case 'mushroom':
+            var mushroom = document.querySelector(".topping-mushroom");
+            mushroom.classList.remove("hidden");
+            break;
+          case 'peppers':
+            var peppers = document.querySelector(".topping-peppers");
+            peppers.classList.remove("hidden");
+            break;
+          case 'onion':
+            var onion = document.querySelector(".topping-onion");
+            onion.classList.remove("hidden");
+            break;
+          case 'tomato':
+            var tomato = document.querySelector(".topping-tomato");
+            tomato.classList.remove("hidden");
+            break;
+          case 'spinach':
+            var spinach = document.querySelector(".topping-spinach");
+            spinach.classList.remove("hidden");
+            break;
+          case 'garlic':
+            var garlic = document.querySelector(".topping-garlic");
+            garlic.classList.remove("hidden");
+            break;
+          case 'olive':
+            var olive = document.querySelector(".topping-olive");
+            olive.classList.remove("hidden");
+            break;
+          case 'cheese':
+            var cheese = document.querySelector(".topping-cheese");
+            cheese.classList.remove("hidden");
+            break;
+          case 'bacon':
+            var bacon = document.querySelector(".topping-bacon");
+            bacon.classList.remove("hidden");
+            break;
+        }
+      },500);
+
       firstCardClicked = null;
       secondCardClicked = null;
       matches++;
       attempts++;
+
       if(matches === maxMatches) {
         modal.classList.remove("hidden");
       }
     }else {
       setTimeout(function(){
-        firstCardClicked.classList.remove("hidden");
-        secondCardClicked.classList.remove("hidden");
+        firstCardClicked.parentElement.classList.remove("card-flipped");
+        secondCardClicked.parentElement.classList.remove("card-flipped");
         firstCardClicked = null;
         secondCardClicked = null;
         gameCards.addEventListener('click', handleClick);
-      },1500);
+      },1000);
       attempts++;
     }
     displayStats();
@@ -84,6 +169,7 @@ function displayStats() {
 
   accuracyBar.textContent = calculateAccuracy(attempts, matches);
   accuracyBar.style.width = calculateAccuracy(attempts, matches);
+
 }
 function calculateAccuracy(attempts, matches) {
   if(!attempts) {
@@ -99,28 +185,56 @@ function resetGame() {
   displayStats();
   resetCards();
   modal.classList.add("hidden");
-  shuffleCards();
+  resetPizza();
+
 }
 function resetCards() {
-  var hiddenCards = document.querySelectorAll(".card-back");
-  for(var i = 0; i < hiddenCards.length; i++) {
-    hiddenCards[i].classList.remove("hidden");
-  }
+  // for (var j = 0; j < hiddenCards.length; j++) {
+  //   hiddenCards[j].style.backfaceVisibility = "visible";
+  // }
+  cards.innerHTML = '';
+  shuffleCards();
+  createCards();
 }
 resetButton.addEventListener("click", resetGame);
 
-
 function shuffleCards() {
-  for(var i = 0; i < newCards.length; i++) {
-    var random = Math.floor(Math.random()* newCards.length);
-    var placeHolder = newCards[i];
-    newCards[i] = newCards[random];
+  for(var k = 0; k < newCards.length; k++) {
+    var random = Math.floor(Math.random() * newCards.length);
+    var placeHolder = newCards[k];
+    newCards[k] = newCards[random];
     newCards[random] = placeHolder;
   }
-  var oldCards = document.querySelectorAll(".card-front");
-  for (var j = 0; j < oldCards.length; j++) {
-    oldCards[j].className = newCards[j];
-    oldCards[j].classList.add("card-front");
+  // var oldCards = document.querySelectorAll(".card-front");
+  // for (var l = 0; l < oldCards.length; l++) {
+  //   oldCards[l].classList.add(newCards[l]);
+  // }
+  // return oldCards;
+}
+
+function createCards() {
+  for (var i = 0; i < newCards.length; i++) {
+    var column = document.createElement("div");
+    column.classList.add("column", "col-2");
+
+    var card = document.createElement("div");
+    card.className = "card";
+
+    var cardFront = document.createElement("div");
+    cardFront.classList.add("card-front");
+    cardFront.classList.add(newCards[i]);
+    card.appendChild(cardFront);
+
+    var cardBack = document.createElement("div");
+    cardBack.className = "card-back";
+
+    card.appendChild(cardBack);
+    column.appendChild(card);
+    cards.appendChild(column);
   }
-  return oldCards;
+}
+function resetPizza() {
+  for(var j = 0; j < toppingClasses.length; j++) {
+    document.querySelector("."+ toppingClasses[j]).classList.add("hidden");
+  }
 }

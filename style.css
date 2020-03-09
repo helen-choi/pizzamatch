@@ -1,6 +1,7 @@
 body {
-  background-color: #06424f;
+  background-image: url(./assets/images/background-pattern.png);
   height: 97vh;
+  font-family: 'Montserrat', sans-serif;
 }
 .container {
   height: 100%;
@@ -14,6 +15,12 @@ header h1 {
   color:white;
   font-family: 'Leckerli One', cursive;
   font-size: 50px;
+  margin-bottom: 0;
+}
+header p {
+  font-family: 'Montserrat', sans-serif;
+  color:white;
+  font-size: 15px;
 }
 /* CARDS */
 main .cards {
@@ -23,6 +30,9 @@ main .cards {
   height: 100%;
   margin: 0 auto;
   width: 80%;
+  background-color: rgba(0,0,0,0.5);
+  padding-top:20px;
+  border-radius: 10px;
 }
 main .cards .column {
   flex-basis: 16%;
@@ -37,11 +47,12 @@ main .cards .column .card {
   height: 160px;
   width: 160px;
   border-radius: 10px;
-  /* background-image: url(./assets/images/lfz-card.jpg); */
   background-size:cover;
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
+  transform-style: preserve-3d;
+  transition: all 0.5s ease;
 }
 
 /* FLIP CARDS */
@@ -54,35 +65,39 @@ main .cards .column .card {
   position: absolute;
   border-radius: 10px;
 }
+.card-flipped {
+  transform: rotateY(180deg);
+}
 .card-back {
-  background-image: url(./assets/images/lfz-card.jpg);
+  background-image: url(./assets/images/back-card.jpg);
+  backface-visibility: hidden;
 }
-.js-logo {
-  background-image: url(./assets/images/js-logo.png);
+.garlic {
+  background-image: url(./assets/images/garlic.jpg);
 }
-.css-logo {
-  background-image: url(./assets/images/css-logo.png);
+.mushroom {
+  background-image: url(./assets/images/mushroom.jpg);
 }
-.docker-logo {
-  background-image: url(./assets/images/docker-logo.jpg);
+.cheese {
+  background-image: url(./assets/images/cheese.jpg);
 }
-.gitHub-logo {
-  background-image: url(./assets/images/gitHub-logo.png);
+.bacon {
+  background-image: url(./assets/images/bacon.jpg);
 }
-.html-logo {
-  background-image: url(./assets/images/html-logo.png);
+.spinach {
+  background-image: url(./assets/images/spinach.jpg);
 }
-.mysql-logo {
-  background-image: url(./assets/images/mysql-logo.jpg);
+.olive {
+  background-image: url(./assets/images/olive.jpg);
 }
-.node-logo {
-  background-image: url(./assets/images/node-logo.png);
+.tomato {
+  background-image: url(./assets/images/tomato.jpg);
 }
-.php-logo {
-  background-image: url(./assets/images/php-logo.jpeg);
+.onion {
+  background-image: url(./assets/images/onion.jpg);
 }
-.react-logo {
-  background-image: url(./assets/images/react-logo.png);
+.peppers {
+  background-image: url(./assets/images/peppers.jpg);
 }
 /* SCORE */
 .score {
@@ -128,7 +143,7 @@ main .cards .column .card {
 }
 .score .number-box {
   display: flex;
-  align-content: center;
+  align-items: center;
   justify-content: space-around;
   margin-bottom: 20px;
 }
@@ -149,6 +164,44 @@ main .cards .column .card {
 .score #accuracy {
   display: none;
 }
+/* Build Pizza */
+.build-pizza {
+  position: relative;
+  height: 180px;
+  background: url(./assets/images/pizza-dough.png) no-repeat center center;
+  background-size: contain;
+
+}
+.pizza-shake {
+  animation: dough 0.5s;
+}
+@keyframes dough {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  25% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  50% { transform: translate(-3px, 1px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+
+}
+
+.build-pizza img{
+  width: 180px;
+  position: absolute;
+  left: 38px;
+  animation-name: topping;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+}
+@keyframes topping {
+  0% {top: -130px;opacity: 0;transform: skew(15deg, 15deg);}
+  25% {opacity:0.5;}
+  100% { top: 0;opacity: 1;transform: skew(0);}
+}
+
 /* Winner Modal */
 .modal-overlay {
   position: fixed;
@@ -163,10 +216,23 @@ main .cards .column .card {
   background-color: powderblue;
   border:2px solid black;
   width: 50%;
-  height: 100px;
+  height: 600px;
   text-align: center;
 }
-
+.modal h1 {
+  font-family: 'Leckerli One', cursive;
+  font-size: 45px;
+}
+.modal img {
+  width: 600px;
+}
+.modal button {
+  display: block;
+  margin: 0 auto;
+  padding: 10px 20px;
+    font-size: 20px;
+    text-transform: uppercase;
+}
 .hidden {
   display: none;
 }
