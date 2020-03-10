@@ -1,7 +1,12 @@
+@font-face {
+  font-family: jellyCrazies;
+  src: url(./assets/fonts/Jelly\ Crazies.ttf);
+}
+
 body {
   background-image: url(./assets/images/background-pattern.png);
   height: 97vh;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Baloo Chettan 2', cursive;
 }
 .container {
   height: 100%;
@@ -18,7 +23,7 @@ header h1 {
   margin-bottom: 0;
 }
 header p {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Baloo Chettan 2', cursive;
   color:white;
   font-size: 15px;
 }
@@ -131,14 +136,14 @@ main .cards .column .card {
   width: 0%;
   text-transform: uppercase;
   color:#06424f;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Baloo Chettan 2', cursive;
   font-size: 13px;
   font-weight: 600;
 }
 .score p {
   text-transform: uppercase;
   color:white;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Baloo Chettan 2', cursive;
   font-size: 13px;
 }
 .score .number-box {
@@ -152,7 +157,7 @@ main .cards .column .card {
 }
 .score .number-box p.numbers {
   font-size: 40px;
-  font-weight: bold;
+  font-weight: 600;
   padding-bottom: 10px;
 }
 .score .number-box .meter {
@@ -206,25 +211,34 @@ main .cards .column .card {
 .modal-overlay {
   position: fixed;
   width: 100%;
-  height: 100vh;
+  height: 90vh;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   z-index: 3;
+  background-color: rgba(0,0,0,0.6);
 }
 .modal {
-  background-color: powderblue;
-  border:2px solid black;
-  width: 50%;
-  height: 600px;
-  text-align: center;
+    border: 15px solid white;
+    width: 40%;
+    height: 600px;
+    text-align: center;
+    border-radius: 50px;
+    box-shadow: 0 0 20px #000000;
+    background: #FFECE1 url("./assets/images/congrats-top.png") no-repeat top;
+    background-size: contain;
 }
 .modal h1 {
-  font-family: 'Leckerli One', cursive;
+  font-family: 'Baloo', cursive;
   font-size: 45px;
+  margin-bottom: 10px;
+}
+.modal p {
+  font-size:20px;
+  margin:0;
 }
 .modal img {
-  width: 600px;
+  width: 500px;
 }
 .modal button {
   display: block;
@@ -232,6 +246,10 @@ main .cards .column .card {
   padding: 10px 20px;
     font-size: 20px;
     text-transform: uppercase;
+    border-radius: 12px;
+    color: white;
+    background-image: linear-gradient(to right, red , yellow);
+    border: 7px solid white;
 }
 .hidden {
   display: none;
