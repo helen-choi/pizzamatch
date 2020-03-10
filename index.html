@@ -13,6 +13,7 @@
 <body>
   <div class="modal-overlay hidden">
     <div class="modal">
+      <img src="./assets/images/bon-apetit.png" alt="">
       <h1>Bon Appetit!</h1>
       <p>Your pizza is ready.</p>
       <img src="./assets/images/congrats.png" alt="">
@@ -22,57 +23,59 @@
   <div class="container">
     <div class="row">
       <header>
-        <h1>Build Your Pizza</h1>
-        <p>Claim the ingredients for your pizza by matching the cards. Goodluck!</p>
-      </header>
-    </div>
-    <div class="row">
-      <main id="gameCards">
-        <div class="score">
-          <div class="number-box">
-            <div class="meter col-3">
-              <span id="accuracyBar"></span>
-              <p>Accuracy</p>
-            </div>
-            <div class="games-played col-3">
-              <p id="games-played" class="numbers">0</p>
-              <p>Games Played</p>
-            </div>
-            <div class="attempts col-3">
-              <p id="attempts" class="numbers">0</p>
-              <p>Attempts</p>
-            </div>
-            <div class="build-pizza col-3">
-              <div class="topping-mushroom hidden">
-                <img src="./assets/images/topping-mushroom.png" alt="">
+        <div class="col-8">
+          <h1>Build Your Pizza</h1>
+          <p>Claim the ingredients for your pizza by matching the cards. Goodluck!</p>
+          <div class="score">
+            <div class="number-box">
+              <div class="meter col-4">
+                <span id="accuracyBar"></span>
+                <p>Accuracy</p>
               </div>
-              <div class="topping-peppers hidden">
-                <img src="./assets/images/topping-peppers.png" alt="">
+              <div class="games-played col-4">
+                <p id="games-played" class="numbers">0</p>
+                <p>Games Played</p>
               </div>
-              <div class="topping-onion hidden">
-                <img src="./assets/images/topping-onion.png" alt="">
-              </div>
-              <div class="topping-tomato hidden">
-                <img src="./assets/images/topping-tomato.png" alt="">
-              </div>
-              <div class="topping-spinach hidden">
-                <img src="./assets/images/topping-spinach.png" alt="">
-              </div>
-              <div class="topping-garlic hidden">
-                <img src="./assets/images/topping-garlic.png" alt="">
-              </div>
-              <div class="topping-olive hidden">
-                <img src="./assets/images/topping-olive.png" alt="">
-              </div>
-              <div class="topping-cheese hidden">
-                <img src="./assets/images/topping-cheese.png" alt="">
-              </div>
-              <div class="topping-bacon hidden">
-                <img src="./assets/images/topping-bacon.png" alt="">
+              <div class="attempts col-4">
+                <p id="attempts" class="numbers">0</p>
+                <p>Attempts</p>
               </div>
             </div>
           </div>
         </div>
+        <div class="build-pizza col-4">
+          <div class="topping-mushroom hidden">
+            <img src="./assets/images/topping-mushroom.png" alt="">
+          </div>
+          <div class="topping-peppers hidden">
+            <img src="./assets/images/topping-peppers.png" alt="">
+          </div>
+          <div class="topping-onion hidden">
+            <img src="./assets/images/topping-onion.png" alt="">
+          </div>
+          <div class="topping-tomato hidden">
+            <img src="./assets/images/topping-tomato.png" alt="">
+          </div>
+          <div class="topping-spinach hidden">
+            <img src="./assets/images/topping-spinach.png" alt="">
+          </div>
+          <div class="topping-garlic hidden">
+            <img src="./assets/images/topping-garlic.png" alt="">
+          </div>
+          <div class="topping-olive hidden">
+            <img src="./assets/images/topping-olive.png" alt="">
+          </div>
+          <div class="topping-cheese hidden">
+            <img src="./assets/images/topping-cheese.png" alt="">
+          </div>
+          <div class="topping-bacon hidden">
+            <img src="./assets/images/topping-bacon.png" alt="">
+          </div>
+        </div>
+      </header>
+    </div>
+    <div class="row">
+      <main id="gameCards">
         <div class="cards"></div>
       </main>
     </div>
