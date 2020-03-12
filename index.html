@@ -8,13 +8,12 @@
   <link href="https://fonts.googleapis.com/css?family=Leckerli+One&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Baloo+Chettan+2:400,600&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Baloo&display=swap" rel="stylesheet">
-  <title>Build You Pizza</title>
+  <title>Pizza Match</title>
 </head>
 <body>
   <div class="modal-overlay hidden">
     <div class="modal">
-      <img src="./assets/images/bon-apetit.png" alt="">
-      <h1>Bon Appetit!</h1>
+      <img class="bon-appetit" src="./assets/images/bon-appetit.png" alt="">
       <p>Your pizza is ready.</p>
       <img src="./assets/images/congrats.png" alt="">
       <button id="reset">Still hungry?</button>
@@ -23,53 +22,55 @@
   <div class="container">
     <div class="row">
       <header>
-        <div class="col-8">
-          <h1>Build Your Pizza</h1>
-          <p>Claim the ingredients for your pizza by matching the cards. Goodluck!</p>
-          <div class="score">
-            <div class="number-box">
-              <div class="meter col-4">
-                <span id="accuracyBar"></span>
-                <p>Accuracy</p>
-              </div>
-              <div class="games-played col-4">
-                <p id="games-played" class="numbers">0</p>
-                <p>Games Played</p>
-              </div>
-              <div class="attempts col-4">
-                <p id="attempts" class="numbers">0</p>
-                <p>Attempts</p>
-              </div>
+        <div class="score">
+          <div class="number-box">
+            <div class="meter col-4">
+              <span id="accuracyBar"></span>
+              <p>Accuracy</p>
+            </div>
+            <div class="games-played col-4">
+              <p id="games-played" class="numbers">0</p>
+              <p>Games Played</p>
+            </div>
+            <div class="attempts col-4">
+              <p id="attempts" class="numbers">0</p>
+              <p>Attempts</p>
             </div>
           </div>
         </div>
-        <div class="build-pizza col-4">
-          <div class="topping-mushroom hidden">
-            <img src="./assets/images/topping-mushroom.png" alt="">
+        <div class="header">
+          <div class="logo col-8">
+            <img src="./assets/images/logo.png" alt="">
+            <p>Claim the ingredients for your pizza by matching the cards. Goodluck!</p>
           </div>
-          <div class="topping-peppers hidden">
-            <img src="./assets/images/topping-peppers.png" alt="">
-          </div>
-          <div class="topping-onion hidden">
-            <img src="./assets/images/topping-onion.png" alt="">
-          </div>
-          <div class="topping-tomato hidden">
-            <img src="./assets/images/topping-tomato.png" alt="">
-          </div>
-          <div class="topping-spinach hidden">
-            <img src="./assets/images/topping-spinach.png" alt="">
-          </div>
-          <div class="topping-garlic hidden">
-            <img src="./assets/images/topping-garlic.png" alt="">
-          </div>
-          <div class="topping-olive hidden">
-            <img src="./assets/images/topping-olive.png" alt="">
-          </div>
-          <div class="topping-cheese hidden">
-            <img src="./assets/images/topping-cheese.png" alt="">
-          </div>
-          <div class="topping-bacon hidden">
-            <img src="./assets/images/topping-bacon.png" alt="">
+          <div class="build-pizza col-4">
+            <div class="topping-mushroom hidden">
+              <img src="./assets/images/topping-mushroom.png" alt="">
+            </div>
+            <div class="topping-peppers hidden">
+              <img src="./assets/images/topping-peppers.png" alt="">
+            </div>
+            <div class="topping-onion hidden">
+              <img src="./assets/images/topping-onion.png" alt="">
+            </div>
+            <div class="topping-tomato hidden">
+              <img src="./assets/images/topping-tomato.png" alt="">
+            </div>
+            <div class="topping-spinach hidden">
+              <img src="./assets/images/topping-spinach.png" alt="">
+            </div>
+            <div class="topping-garlic hidden">
+              <img src="./assets/images/topping-garlic.png" alt="">
+            </div>
+            <div class="topping-olive hidden">
+              <img src="./assets/images/topping-olive.png" alt="">
+            </div>
+            <div class="topping-cheese hidden">
+              <img src="./assets/images/topping-cheese.png" alt="">
+            </div>
+            <div class="topping-bacon hidden">
+              <img src="./assets/images/topping-bacon.png" alt="">
+            </div>
           </div>
         </div>
       </header>
