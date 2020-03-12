@@ -9,6 +9,7 @@ var attempts = 0;
 var gamesPlayed = 0;
 var resetButton = document.getElementById("reset");
 var modal = document.querySelector(".modal-overlay");
+var sound = document.getElementById("sound");
 var newCards = [
   'garlic',
   'mushroom',
@@ -91,6 +92,14 @@ function handleClick(event) {
 
     if(firstCardClasses === secondCardClasses) {
       gameCards.addEventListener('click', handleClick);
+
+      var soundFlag = true;
+      if(soundFlag) {
+        sound.pause();
+        sound.currentTime = 0;
+        sound.play();
+        soundFlag = false;
+      }
 
       firstCardClicked.previousElementSibling.style.opacity = "0.7";
       secondCardClicked.previousElementSibling.style.opacity = "0.7";
