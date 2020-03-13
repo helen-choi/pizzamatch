@@ -72,7 +72,7 @@ createCards();
 //   card.appendChild(cardBack);
 // }
 
-window.addEventListener('load', shuffleCards);
+window.addEventListener('DOMContentLoaded', resetCards);
 gameCards.addEventListener('click', handleClick);
 
 function handleClick(event) {
@@ -155,14 +155,16 @@ function handleClick(event) {
       attempts++;
 
       if(matches === maxMatches) {
-        modal.classList.remove("hidden");
-        var winFlag = true;
-        if (winFlag) {
-          win.pause();
-          win.currentTime = 0;
-          win.play();
-          winFlag = false;
-        }
+        setTimeout(function(){
+          modal.classList.remove("hidden");
+          var winFlag = true;
+          if (winFlag) {
+            win.pause();
+            win.currentTime = 0;
+            win.play();
+            winFlag = false;
+          }
+        }, 1000)
       }
     }else {
       setTimeout(function(){
