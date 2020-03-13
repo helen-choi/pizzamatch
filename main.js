@@ -10,6 +10,7 @@ var gamesPlayed = 0;
 var resetButton = document.getElementById("reset");
 var modal = document.querySelector(".modal-overlay");
 var sound = document.getElementById("sound");
+var win = document.getElementById("win");
 var newCards = [
   'garlic',
   'mushroom',
@@ -155,6 +156,13 @@ function handleClick(event) {
 
       if(matches === maxMatches) {
         modal.classList.remove("hidden");
+        var winFlag = true;
+        if (winFlag) {
+          win.pause();
+          win.currentTime = 0;
+          win.play();
+          winFlag = false;
+        }
       }
     }else {
       setTimeout(function(){
