@@ -435,7 +435,7 @@ img.bon-appetit {
     box-shadow: 0 0 10px black;
   }
   .logo img {
-    width: 600px;
+    width: 300px;
   }
 }
 @media only screen and (max-width: 620px) {
