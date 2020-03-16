@@ -84,13 +84,13 @@ main .cards .column .card {
     -webkit-transform: rotateY(180deg);
     -moz-transform: rotateY(180deg);
     -ms-transform: rotateY(180deg);
-  z-index: 2;
+  z-index: -1;
 }
 .card-back {
   background-image: url(./assets/images/back-card.jpg);
   backface-visibility: hidden;
   -webkit-backface-visibility:hidden;
-  z-index: -1;
+  z-index: 2;
 }
 .garlic {
   background-image: url(./assets/images/garlic.jpg);
