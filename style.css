@@ -67,6 +67,8 @@ main .cards .column .card {
   -webkit-transform-style: preserve-3d;
   -ms-transform-style:preserve-3d;
   transition: all 0.5s ease;
+  -webkit-transition: all 0.5 ease;
+  -ms-transition: all 0.5 ease;
 }
 
 /* FLIP CARDS */
@@ -78,7 +80,6 @@ main .cards .column .card {
   background-position: center;
   position: absolute;
   border-radius: 10px;
-  z-index: -1;
 }
 .card-flipped {
   transform: rotateY(180deg);
@@ -91,7 +92,6 @@ main .cards .column .card {
   backface-visibility: hidden;
   -webkit-backface-visibility:hidden;
   -ms-backface-visibility: hidden;
-  z-index: 1;
 }
 .garlic {
   background-image: url(./assets/images/garlic.jpg);
