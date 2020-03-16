@@ -88,7 +88,8 @@ main .cards .column .card {
 }
 .card-back {
   background-image: url(./assets/images/back-card.jpg);
-
+  backface-visibility: hidden;
+  -webkit-backface-visibility:hidden;
   z-index: -1;
 }
 .garlic {
