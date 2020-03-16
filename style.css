@@ -67,6 +67,8 @@ main .cards .column .card {
   -webkit-transform-style: preserve-3d;
   -ms-transform-style:preserve-3d;
   transition: all 0.5s ease;
+  -webkit-transition: all 0.5 ease;
+  -ms-transition: all 0.5 ease;
 }
 
 /* FLIP CARDS */
