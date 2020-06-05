@@ -185,9 +185,6 @@ function resetGame() {
 
 }
 function resetCards() {
-  // for (var j = 0; j < hiddenCards.length; j++) {
-  //   hiddenCards[j].style.backfaceVisibility = "visible";
-  // }
   cards.innerHTML = '';
   shuffleCards();
   createCards();
@@ -201,11 +198,6 @@ function shuffleCards() {
     newCards[k] = newCards[random];
     newCards[random] = placeHolder;
   }
-  // var oldCards = document.querySelectorAll(".card-front");
-  // for (var l = 0; l < oldCards.length; l++) {
-  //   oldCards[l].classList.add(newCards[l]);
-  // }
-  // return oldCards;
 }
 
 function createCards() {
