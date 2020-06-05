@@ -49,29 +49,6 @@ var cards = document.querySelector('.cards');
 
 createCards();
 
-// var cards = document.createElement("div");
-// cards.className = "cards";
-// gameCards.appendChild(cards);
-
-// for(var i =1; i <= 18; i++) {
-//   var column = document.createElement("div");
-//   column.classList.add("column",
-//   "col-2");
-//   cards.appendChild(column);
-
-//   var card = document.createElement("div");
-//   card.className = "card";
-//   column.appendChild(card);
-
-//   var cardFront = document.createElement("div");
-//   cardFront.className = "card-front";
-//   card.appendChild(cardFront);
-
-//   var cardBack = document.createElement("div");
-//   cardBack.className = "card-back";
-//   card.appendChild(cardBack);
-// }
-
 window.addEventListener('DOMContentLoaded', resetCards);
 gameCards.addEventListener('click', handleClick);
 
