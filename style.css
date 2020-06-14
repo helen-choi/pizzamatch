@@ -295,13 +295,15 @@ main .cards .column .card {
   animation-timing-function: ease-in-out;
 }
 @keyframes topping {
-  0% {top: -130px;opacity: 0;transform: skew(15deg, 15deg);
+  0% {top: -130px;opacity: 0;
+    transform: skew(15deg, 15deg);
     -webkit-transform: skew(15deg, 15deg);
     -moz-transform: skew(15deg, 15deg);
     -ms-transform: skew(15deg, 15deg);
   }
   25% {opacity:0.5;}
-  100% { top: 0;opacity: 1;transform: skew(0);
+  100% { top: 0;opacity: 1;
+    transform: skew(0);
     -webkit-transform: skew(0);
     -moz-transform: skew(0);
     -ms-transform: skew(0);
@@ -414,19 +416,8 @@ img.bon-appetit {
     -webkit-transform: translate(-50%);
     -moz-transform: translate(-50%);
     -ms-transform: translate(-50%);
-  }
-}
-  @keyframes topping {
-  0% {top: -130px;opacity: 0;transform: skew(15deg, 15deg) translate(-50%);
-    -webkit-transform: skew(15deg, 15deg) translate(-50%);
-    -moz-transform: skew(15deg, 15deg) translate(-50%);
-    -ms-transform: skew(15deg, 15deg) translate(-50%);
-  }
-  25% {opacity:0.5;}
-  100% { top: 0;opacity: 1;transform: skew(0) translate(-50%);
-    -webkit-transform: skew(0) translate(-50%);
-    -moz-transform: skew(0) translate(-50%);
-    -ms-transform: skew(0) translate(-50%);
+    animation-name: none;
+    transition: all 1s ease;
   }
 }
 @media only screen and (max-width: 768px) {
