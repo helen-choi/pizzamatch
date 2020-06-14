@@ -66,9 +66,6 @@ main .cards .column .card {
   transform-style: preserve-3d;
   -webkit-transform-style: preserve-3d;
   -ms-transform-style:preserve-3d;
-  transition: all 0.5s ease;
-  -webkit-transition: all 0.5 ease;
-  -ms-transition: all 0.5 ease;
 }
 
 /* FLIP CARDS */
@@ -86,6 +83,9 @@ main .cards .column .card {
     -webkit-transform: rotateY(180deg);
     -moz-transform: rotateY(180deg);
     -ms-transform: rotateY(180deg);
+    transition: all 0.5s ease;
+  -webkit-transition: all 0.5 ease;
+  -ms-transition: all 0.5 ease;
 }
 .card-back {
   background-image: url(./assets/images/back-card.jpg);
