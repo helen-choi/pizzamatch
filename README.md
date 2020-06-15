@@ -36,6 +36,6 @@ None
 
 2. Change working directory to the location of the newly cloned repository.
 
-        cd memory-match
+        cd pizzamatch
 
 3. View the application by opening ```index.html``` in your browser.
