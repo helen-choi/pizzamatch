@@ -36,6 +36,6 @@ None
 
 2. Change working directory to the location of the newly cloned repository.
 
-        ![#1589F0]cd`#1589F0` memory-match
+        cd memory-match
 
 3. View the application by opening ```index.html``` in your browser.
