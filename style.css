@@ -437,7 +437,7 @@ img.bon-appetit {
     width: 500px;
   }
 }
-@media only screen and (min-width: 620px) {
+@media only screen and (min-width: 1024px) {
   main .cards .column .card {
     transition: all 0.5s ease;
     -webkit-transition: all 0.5 ease;
