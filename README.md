@@ -22,7 +22,7 @@ Try the application live at https://pizzamatch.helen-choi.com/
 - User can reset game and play again
 
 ## Preview
-![Add Destination Demo](https://github.com/helen-choi/itinize/blob/master/server/public/images/add-destination-demo.gif "Add Destination Demo")
+![Game Demo](https://github.com/helen-choi/pizzamatch/blob/master/assets/images/pizzamatch.gif "Game Demo")
 
 ## Development
 
