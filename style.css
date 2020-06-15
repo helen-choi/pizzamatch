@@ -292,6 +292,7 @@ main .cards .column .card {
   animation-timing-function: ease-in-out;
 }
 @keyframes topping {
+
   0% {top: -130px;opacity: 0;
     transform: skew(15deg, 15deg);
     -webkit-transform: skew(15deg, 15deg);
@@ -299,6 +300,7 @@ main .cards .column .card {
     -ms-transform: skew(15deg, 15deg);
   }
   25% {opacity:0.5;}
+
   100% { top: 0;opacity: 1;
     transform: skew(0);
     -webkit-transform: skew(0);
