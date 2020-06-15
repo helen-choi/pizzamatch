@@ -20,3 +20,22 @@ Try the application live at https://pizzamatch.helen-choi.com/
 - User can win game
 - User can view stats (accuracy, wins, attempts)
 - User can reset game and play again
+
+## Preview
+![Add Destination Demo](https://github.com/helen-choi/itinize/blob/master/server/public/images/add-destination-demo.gif "Add Destination Demo")
+
+## Development
+
+### System Requirements
+None
+
+### Getting Started
+1. Clone the repository.
+
+        git clone https://github.com/helen-choi/pizzamatch.git
+
+2. Change working directory to the location of the newly cloned repository.
+
+        cd memory-match
+
+3. View the application by opening index.html in your browser.
