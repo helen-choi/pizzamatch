@@ -38,4 +38,4 @@ None
 
         cd memory-match
 
-3. View the application by opening index.html in your browser.
+3. View the application by opening ```index.html``` in your browser.
